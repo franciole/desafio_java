@@ -103,10 +103,10 @@ public class DBService {
 		produtoRepository.saveAll(Arrays.asList(p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11));
 
 		Usuario user1 = new Usuario(null, "Admin", "admin@gmail.com", TipoCliente.PESSOAFISICA, pe.encode("123456"),
-				sdf.parse("01/01/2000 00:00"), sdf.parse("10/01/2021 21:00"), sdf.parse("10/01/2021 21:00"));
+				sdf.parse("01/01/2000 00:00"), sdf.parse("10/01/2021 21:00"), sdf.parse("10/01/2021 21:00"), true);
 		user1.addPerfil(Perfil.ADMIN);
 		Usuario user2 = new Usuario(null, "Nome 02", "nome02@gmail.com", TipoCliente.PESSOAFISICA, pe.encode("123456"),
-				sdf.parse("01/01/2000 00:00"), sdf.parse("10/01/2021 21:00"), sdf.parse("10/01/2021 21:00"));
+				sdf.parse("01/01/2000 00:00"), sdf.parse("10/01/2021 21:00"), sdf.parse("10/01/2021 21:00"), true);
 		
 
 		usuarioRepository.saveAll(Arrays.asList(user1, user2));

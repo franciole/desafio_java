@@ -51,19 +51,16 @@ public class Usuario implements Serializable {
 	private String senha;
 	private Integer tipo;
 
-	@NotEmpty(message = "Preenchimento obrigatório")
 	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	private Date dataNascimento;
 
-	@NotEmpty(message = "Preenchimento obrigatório")
 	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	private Date dataCriacao;
 
-	@NotEmpty(message = "Preenchimento obrigatório")
 	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	private Date dataAtualizacao;
 
-	//private boolean enable = true;
+	private boolean enable = true;
 
 	@ElementCollection(fetch = FetchType.EAGER)
 	@CollectionTable(name = "PERFIS")
@@ -78,7 +75,7 @@ public class Usuario implements Serializable {
 	}
 
 	public Usuario(Integer id, String nome, String email, TipoCliente tipo, String senha, Date dataNascimento,
-			Date dataCriacao, Date dataAtualizacao) {
+			Date dataCriacao, Date dataAtualizacao, boolean enable) {
 		super();
 		this.id = id;
 		this.nome = nome;
@@ -89,6 +86,7 @@ public class Usuario implements Serializable {
 		this.dataNascimento = dataNascimento;
 		this.dataCriacao = dataCriacao;
 		this.dataAtualizacao = dataAtualizacao;
+		this.enable = enable;
 		
 	}
 
@@ -156,13 +154,13 @@ public class Usuario implements Serializable {
 		this.dataAtualizacao = dataAtualizacao;
 	}
 
-//	public boolean isEnable() {
-//		return enable;
-//	}
-//
-//	public void setEnable(boolean enable) {
-//		this.enable = enable;
-//	}
+	public boolean isEnable() {
+		return enable;
+	}
+
+	public void setEnable(boolean enable) {
+		this.enable = enable;
+	}
 
 	public void addPerfil(Perfil perfil) {
 		perfis.add(perfil.getCod());

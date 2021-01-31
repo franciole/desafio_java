@@ -22,7 +22,7 @@ public class UsuarioDTO implements Serializable {
 	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
 	private Date dataAtualizacao;
 
-	//private boolean enable;
+	private boolean enable;
 
 	public UsuarioDTO() {
 	}
@@ -31,7 +31,7 @@ public class UsuarioDTO implements Serializable {
 		id = obj.getId();
 		nome = obj.getNome();
 		dataAtualizacao = obj.getDataAtualizacao();
-		//enable = obj.isEnable();
+		enable = obj.isEnable();
 	}
 
 	public Integer getId() {
@@ -58,12 +58,12 @@ public class UsuarioDTO implements Serializable {
 		this.dataAtualizacao = dataAtualizacao;
 	}
 
-//	public boolean isEnable() {
-//		return enable;
-//	}
-//
-//	public void setEnable(boolean enable) {
-//		this.enable = enable;
-//	}
+	public boolean isEnable() {
+		return enable;
+	}
+
+	public void setEnable(boolean enable) {
+		this.enable = enable;
+	}
 
 }

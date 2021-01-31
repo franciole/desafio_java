@@ -33,18 +33,18 @@ public class UsuarioNewDTO implements Serializable {
 	private Date dataCriacao;
 
 	@JsonFormat(pattern = "dd/MM/yyyy HH:mm")
-	private Date dataAtualizacao;
+	private Date dataAtualizacao;	
 	
 	@NotEmpty(message = "Preenchimento obrigatório")
 	private String senha;
 
-	//private boolean enable = true;
+	private boolean enable = true;
 
 	public UsuarioNewDTO() {
 	}
 
 	public UsuarioNewDTO(String nome, String email, Integer tipo, Date dataNascimento, Date dataCriacao,
-			Date dataAtualizacao, String senha) {
+			Date dataAtualizacao, boolean enable, String senha) {
 		super();
 		this.nome = nome;
 		this.email = email;
@@ -52,7 +52,7 @@ public class UsuarioNewDTO implements Serializable {
 		this.dataNascimento = dataNascimento;
 		this.dataCriacao = dataCriacao;
 		this.dataAtualizacao = dataAtualizacao;
-		//this.enable = enable;
+		this.enable = enable;
 		this.senha = senha;
 	}
 
@@ -104,13 +104,13 @@ public class UsuarioNewDTO implements Serializable {
 		this.dataAtualizacao = dataAtualizacao;
 	}
 
-//	public boolean isEnable() {
-//		return enable;
-//	}
-//
-//	public void setEnable(boolean enable) {
-//		this.enable = enable;
-//	}
+	public boolean isEnable() {
+		return enable;
+	}
+
+	public void setEnable(boolean enable) {
+		this.enable = enable;
+	}
 
 	public String getSenha() {
 		return senha;

@@ -77,12 +77,14 @@ public class UsuarioService {
 	}
 
 	public Usuario fromDto(UsuarioDTO objDto) {
-		return new Usuario(objDto.getId(), objDto.getNome(), null, null, null, null, null, objDto.getDataAtualizacao());
+		return new Usuario(objDto.getId(), objDto.getNome(), null, null, null, null, null, 
+				objDto.getDataAtualizacao(), objDto.isEnable());
 	}
 
 	public Usuario fromDto(UsuarioNewDTO objDto) {
 		Usuario user = new Usuario(null, objDto.getNome(), objDto.getEmail(), TipoCliente.toEnum(objDto.getTipo()),
-				pe.encode(objDto.getSenha()), objDto.getDataNascimento(), objDto.getDataCriacao(), objDto.getDataAtualizacao());
+				pe.encode(objDto.getSenha()), objDto.getDataNascimento(), objDto.getDataCriacao(),
+				objDto.getDataAtualizacao(), objDto.isEnable());
 		return user;
 	}
 
